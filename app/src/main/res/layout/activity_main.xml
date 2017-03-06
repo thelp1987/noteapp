@@ -5,17 +5,118 @@
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="de.thelp1987.noteapp.MainActivity">
+        tools:context="de.thelp1987.noteapp.activities.MainActivity">
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:id="@+id/rvNotes">
     </android.support.v7.widget.RecyclerView>
-    <android.support.design.widget.FloatingActionButton
+
+    <!-- FAB - Menu -->
+    <!-- FAB Main -->
+    <View
+            android:id="@+id/fabBGLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTransBg"
+            android:visibility="gone"/>
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            app:fabSize="mini" app:srcCompat="@android:drawable/ic_menu_add" android:id="@+id/floatingActionButton"
-            android:layout_gravity="bottom|right|end"/>
+            android:layout_marginRight="@dimen/fab_margin"
+            android:gravity="center_vertical"
+            android:clipToPadding="false"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:layout_gravity="bottom|right|end">
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:gravity="center_vertical"
+                app:srcCompat="@android:drawable/ic_menu_add"
+                app:fabSize="normal"/>
+    </LinearLayout>
+
+
+    <!-- Sub-Buttons -->
+    <LinearLayout
+            android:id="@+id/fabLayoutMaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/standard_23"
+            android:padding="@dimen/standard_12"
+            android:clipToPadding="false"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/standard_23"
+            android:layout_gravity="bottom|end"
+            android:visibility="gone">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fabMenuMaps"/>
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_dialog_email"
+                app:fabSize="mini"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/fabLayoutShareNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/standard_12"
+            android:clipToPadding="false"
+            android:layout_marginRight="@dimen/standard_23"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/standard_23"
+            android:layout_gravity="bottom|end"
+            android:visibility="gone">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fabMenuShareNote"/>
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_menu_camera"
+                app:fabSize="mini"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/fabLayoutAddNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/standard_12"
+            android:clipToPadding="false"
+            android:layout_marginRight="@dimen/standard_23"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/standard_23"
+            android:layout_gravity="bottom|end"
+            android:visibility="gone">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fabMenuAddNote"/>
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@android:drawable/ic_btn_speak_now"
+                android:tint="@android:color/white"
+                app:fabSize="mini"/>
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
 
 
