@@ -26,10 +26,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         }
     }
 
-    private List<Notes> notesList;
+    private List<String> notesList;
     private Context nContext;
 
-    public NotesAdapter(Context context, List<Notes> notes) {
+    public NotesAdapter(Context context, List<String> notes) {
         notesList = notes;
         nContext = context;
     }
@@ -91,10 +91,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
      */
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Notes notes = notesList.get(position);
+        String notes = notesList.get(position);
 
         TextView textView = holder.titleTextView;
-        textView.setText(notes.getTitle());
+        textView.setText(notes);
     }
 
     /**

@@ -6,6 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="de.thelp1987.noteapp.activities.MainActivity">
+
+
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:id="@+id/rvNotes">
@@ -33,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:gravity="center_vertical"
-                app:srcCompat="@android:drawable/ic_menu_add"
+                app:srcCompat="@android:drawable/arrow_up_float"
                 app:fabSize="normal"/>
     </LinearLayout>
 

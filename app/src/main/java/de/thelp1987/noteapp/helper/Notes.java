@@ -19,7 +19,7 @@ public class Notes {
         private static int lastNoteId = 0;
 
         public static ArrayList<Notes> createTestList(int numNotes) {
-            ArrayList<Notes> notes = new ArrayList<Notes>();
+            ArrayList<Notes> notes = new ArrayList<>();
 
             for (int i = 1; i <= numNotes; i++) {
                 notes.add(new Notes("Title " + ++lastNoteId));

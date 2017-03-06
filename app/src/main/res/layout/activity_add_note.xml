@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="de.thelp1987.noteapp.activities.AddNoteActivity">
+        tools:context="de.thelp1987.noteapp.activities.AddNoteActivity"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
     <TextView
             android:text="@string/note_title_title"

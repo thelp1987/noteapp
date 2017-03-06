@@ -10,13 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import de.thelp1987.noteapp.R;
-import de.thelp1987.noteapp.helper.Notes;
+import de.thelp1987.noteapp.helper.DBHelper;
 import de.thelp1987.noteapp.helper.NotesAdapter;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList notes;
+    private DBHelper dbHelper;
 
     private FloatingActionButton fabMain, fabMaps, fabShare, fabAdd;
     private LinearLayout fabLayoutMaps, fabLayoutShareNote, fabLayoutAddNote;
@@ -31,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
         // List load into Recycler View
         RecyclerView rvNotes = (RecyclerView) findViewById(R.id.rvNotes);
 
-        notes = Notes.createTestList(20);
+        dbHelper = new DBHelper(MainActivity.this);
+        notes = dbHelper.getAllNotesTitle();
 
-        NotesAdapter notesAdapter = new NotesAdapter(MainActivity.this, notes);
+        final NotesAdapter notesAdapter = new NotesAdapter(MainActivity.this, notes);
+        notesAdapter.notifyDataSetChanged();
 
         rvNotes.setAdapter(notesAdapter);
         rvNotes.setLayoutManager(new LinearLayoutManager(MainActivity.this));
@@ -104,6 +107,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        /*
+        Sub Menu Binding END
+         */
+
+        dbHelper.close();
     }
 
     private void showFABMenu(){
