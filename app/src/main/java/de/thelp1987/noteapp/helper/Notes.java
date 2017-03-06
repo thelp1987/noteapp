@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Created by the-l on 06.03.2017.
  */
 public class Notes {
+    //testen
         private String nTitle;
 
         public Notes(String title) {
