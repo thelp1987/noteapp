@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class DBHelper extends SQLiteOpenHelper {
     /* .: PREDEFINITIONS --- START :. */
-    public final static String DATABASE_NAME = "FavendoNoteApp";
+    public final static String DATABASE_NAME = "NoteApp";
     public final static String NOTES_TABLE_NAME = "notes";
     public final static String NOTES_COLUMN_ID = "id";
     public final static String NOTES_COLUMN_TITLE = "title";
@@ -27,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     /**
      * Constructor<br>
      * Create DB, managed by System<br>
-     * Location: /data/data/de.thelp1987.favendonoteapp/databasesnotes<br>
+     * Location: /data/data/de.thelp1987.noteapp/databasesnotes<br>
      * @param context {@link Context}
      */
     public DBHelper(Context context) {
