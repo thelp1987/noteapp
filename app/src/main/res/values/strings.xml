@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name" translatable="false">Fav. Note App</string>
-    <string name="fabMenuAddNote">Add Note</string>
-    <string name="fabMenuShareNote">Share Note</string>
+    <string name="fabMenuAddNote">Add</string>
+    <string name="fabMenuShareNote">Share</string>
     <string name="fabMenuMaps">Maps</string>
+    <string name="note_title_title">Title</string>
+    <string name="note_textfieldContent_title"/>
+    <string name="note_title_textfield">Content</string>
+    <string name="note_textfieldContent_content">Your creativity is yours!</string>
+    <string name="note_buttonTitle_save">save</string>
 </resources>

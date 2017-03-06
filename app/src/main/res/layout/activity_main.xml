@@ -43,7 +43,7 @@
             android:id="@+id/fabLayoutMaps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/standard_23"
+            android:layout_marginRight="@dimen/fab_sub_menu_right"
             android:padding="@dimen/standard_12"
             android:clipToPadding="false"
             android:gravity="center_vertical"
@@ -57,7 +57,7 @@
                 android:text="@string/fabMenuMaps"/>
 
         <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab1"
+                android:id="@+id/fabMaps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/standard_12"
             android:clipToPadding="false"
-            android:layout_marginRight="@dimen/standard_23"
+            android:layout_marginRight="@dimen/fab_sub_menu_right"
             android:gravity="center_vertical"
             android:layout_marginBottom="@dimen/standard_23"
             android:layout_gravity="bottom|end"
@@ -83,7 +83,7 @@
                 android:text="@string/fabMenuShareNote"/>
 
         <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab2"
+                android:id="@+id/fabShare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/standard_12"
             android:clipToPadding="false"
-            android:layout_marginRight="@dimen/standard_23"
+            android:layout_marginRight="@dimen/fab_sub_menu_right"
             android:gravity="center_vertical"
             android:layout_marginBottom="@dimen/standard_23"
             android:layout_gravity="bottom|end"
@@ -109,7 +109,7 @@
                 android:text="@string/fabMenuAddNote"/>
 
         <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab3"
+                android:id="@+id/fabAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

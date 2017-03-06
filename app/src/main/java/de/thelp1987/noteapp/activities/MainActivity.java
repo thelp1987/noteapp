@@ -1,6 +1,7 @@
 package de.thelp1987.noteapp.activities;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -17,8 +18,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ArrayList notes;
 
-    private FloatingActionButton fab, fab1, fab2, fab3;
-    private LinearLayout fabLayout1, fabLayout2, fabLayout3;
+    private FloatingActionButton fabMain, fabMaps, fabShare, fabAdd;
+    private LinearLayout fabLayoutMaps, fabLayoutShareNote, fabLayoutAddNote;
     private View fabBGLayout;
     private boolean isFABOpen=false;
 
@@ -36,24 +37,27 @@ public class MainActivity extends AppCompatActivity {
 
         rvNotes.setAdapter(notesAdapter);
         rvNotes.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        /*
+        List load END
+         */
 
         /*
         FAB Menu founded by: https://github.com/ajaydewari/FloatingActionButtonMenu
          */
         // FAB Menu
-        fabLayout1= (LinearLayout) findViewById(R.id.fabLayoutMaps);
-        fabLayout2= (LinearLayout) findViewById(R.id.fabLayoutShareNote);
-        fabLayout3= (LinearLayout) findViewById(R.id.fabLayoutAddNote);
+        fabLayoutMaps= (LinearLayout) findViewById(R.id.fabLayoutMaps);
+        fabLayoutShareNote= (LinearLayout) findViewById(R.id.fabLayoutShareNote);
+        fabLayoutAddNote= (LinearLayout) findViewById(R.id.fabLayoutAddNote);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab_main);
-        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab2= (FloatingActionButton) findViewById(R.id.fab2);
-        fab3 = (FloatingActionButton) findViewById(R.id.fab3);
+        fabMain = (FloatingActionButton) findViewById(R.id.fab_main);
+        fabMaps = (FloatingActionButton) findViewById(R.id.fabMaps);
+        fabShare= (FloatingActionButton) findViewById(R.id.fabShare);
+        fabAdd = (FloatingActionButton) findViewById(R.id.fabAdd);
 
         fabBGLayout=findViewById(R.id.fabBGLayout);
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        fabMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!isFABOpen){
@@ -70,28 +74,58 @@ public class MainActivity extends AppCompatActivity {
                 closeFABMenu();
             }
         });
+        /*
+        FAB Menu END
+         */
+
+        /*
+        Sub Menu binding -> Intention
+         */
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddNoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        fabShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShareNoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        fabMaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShowMapsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void showFABMenu(){
         isFABOpen=true;
-        fabLayout1.setVisibility(View.VISIBLE);
-        fabLayout2.setVisibility(View.VISIBLE);
-        fabLayout3.setVisibility(View.VISIBLE);
+        fabLayoutMaps.setVisibility(View.VISIBLE);
+        fabLayoutShareNote.setVisibility(View.VISIBLE);
+        fabLayoutAddNote.setVisibility(View.VISIBLE);
         fabBGLayout.setVisibility(View.VISIBLE);
 
-        fab.animate().rotationBy(180);
-        fabLayout1.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
-        fabLayout2.animate().translationY(-getResources().getDimension(R.dimen.standard_100));
-        fabLayout3.animate().translationY(-getResources().getDimension(R.dimen.standard_145));
+        fabMain.animate().rotationBy(180);
+        fabLayoutMaps.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+        fabLayoutShareNote.animate().translationY(-getResources().getDimension(R.dimen.standard_100));
+        fabLayoutAddNote.animate().translationY(-getResources().getDimension(R.dimen.standard_145));
     }
 
     private void closeFABMenu(){
         isFABOpen=false;
         fabBGLayout.setVisibility(View.GONE);
-        fab.animate().rotationBy(-180);
-        fabLayout1.animate().translationY(0);
-        fabLayout2.animate().translationY(0);
-        fabLayout3.animate().translationY(0).setListener(new Animator.AnimatorListener() {
+        fabMain.animate().rotationBy(-180);
+        fabLayoutMaps.animate().translationY(0);
+        fabLayoutShareNote.animate().translationY(0);
+        fabLayoutAddNote.animate().translationY(0).setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
 
@@ -100,9 +134,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 if(!isFABOpen){
-                    fabLayout1.setVisibility(View.GONE);
-                    fabLayout2.setVisibility(View.GONE);
-                    fabLayout3.setVisibility(View.GONE);
+                    fabLayoutMaps.setVisibility(View.GONE);
+                    fabLayoutShareNote.setVisibility(View.GONE);
+                    fabLayoutAddNote.setVisibility(View.GONE);
                 }
 
             }
